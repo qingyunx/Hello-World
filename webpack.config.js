@@ -1,6 +1,7 @@
 
 const webpack = require('webpack'); //to access built-in plugins
-const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via npm
+const CleanWebpackPlugin = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin'); //installed via yarn
 const path = require('path');
 
 module.exports = {
@@ -25,6 +26,7 @@ module.exports = {
   },
 
   plugins: [
+    new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       template: './src/index.html'
     })
